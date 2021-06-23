@@ -4,11 +4,11 @@ import '../styles/room-code.scss'
 
 export function RoomCode() {
   return (
-    <button>
-      <div className="room-code" >
+    <button className="room-code" >
+      <div>
         <img src={copyImg} alt="Copy room code" />
       </div>
-      <span>Sala #1212123</span>
+      <span>Sala -McqAQy4rLu5CbIctN5t</span>
     </button>
   )
 }
