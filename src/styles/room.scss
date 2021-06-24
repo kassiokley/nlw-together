@@ -62,9 +62,7 @@
 
         .user-info {
           display: flex;
-          justify-content: space-between;
           align-items: center;
-          margin-top: 16px;
 
           img {
             width: 32px;
@@ -96,6 +94,10 @@
           }
         }
       }
+    }
+
+    .question-list {
+      margin-top: 32px;
     }
   }
 }
