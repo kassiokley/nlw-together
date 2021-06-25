@@ -42,6 +42,14 @@ export function AdminRoom() {
         })
   }
 
+  async function handleHighlightQuestion(questionId: string) {
+    await database
+        .ref(`/rooms/${roomId}/questions/${questionId}`)
+        .update({
+          isHighlighted: true
+        })
+  }
+
   async function handleDeleteQuestion(questionId: string) {
     if(window.confirm('Tem certeza que você deseja excluir esta pergunta?')) {
       await database
@@ -85,7 +93,7 @@ export function AdminRoom() {
                 </button>
                 <button
                   type="button"
-                  
+                  onClick={() => handleHighlightQuestion(question.id)}
                 >
                   <img src={answerImg} alt="Dar destaque à pergunta" />
                 </button>
