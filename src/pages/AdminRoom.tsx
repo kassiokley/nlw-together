@@ -2,6 +2,8 @@ import { useHistory, useParams } from "react-router-dom"
 
 import logoImg from "../assets/images/logo.svg"
 import deleteImg from "../assets/images/delete.svg"
+import checkImg from "../assets/images/check.svg"
+import answerImg from "../assets/images/answer.svg"
 
 import { Button } from "../components/Button"
 import { RoomCode } from "../components/RoomCode"
@@ -67,6 +69,18 @@ export function AdminRoom() {
                 content={question.content}
                 author={question.author}
               >
+                <button
+                  type="button"
+                  
+                >
+                  <img src={checkImg} alt="Marcar pergunta como respondida" />
+                </button>
+                <button
+                  type="button"
+                  
+                >
+                  <img src={answerImg} alt="Dar destaque à pergunta" />
+                </button>
                 <button
                   type="button"
                   onClick={() => handleDeleteQuestion(question.id)}
