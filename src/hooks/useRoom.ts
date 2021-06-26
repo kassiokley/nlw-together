@@ -56,6 +56,7 @@ export function useRoom(roomId: string) {
             isHighlighted: value.isHighlighted,
             isAnswered: value.isAnswered,
             likeCount: Object.values(value.likes ?? {}).length,
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             likeId: Object.entries(value.likes ?? {}).find(([key, like]) => like.authorId === user?.id)?.[0],
           }
         }
