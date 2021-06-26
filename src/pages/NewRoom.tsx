@@ -17,10 +17,10 @@ export function NewRoom() {
 
   const [newRoom, setNewRoom] = useState('')
 
-  async function handleCreateRoom(event:FormEvent) {
+  async function handleCreateRoom(event: FormEvent) {
     event.preventDefault()
 
-    if(newRoom.trim() === '') {
+    if (newRoom.trim() === '') {
       return
     }
 
@@ -28,7 +28,7 @@ export function NewRoom() {
 
     const firebaseRoom = await roomRef.push({
       title: newRoom,
-      authorId: user?.id,
+      authorId: user?.id
     })
 
     history.push(`/rooms/${firebaseRoom.key}`)
@@ -37,7 +37,10 @@ export function NewRoom() {
   return (
     <div id="page-auth">
       <aside>
-        <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
+        <img
+          src={illustrationImg}
+          alt="Ilustração simbolizando perguntas e respostas"
+        />
         <strong>Crie salas de Q&amp;A ao vivo</strong>
         <p>Tire dúvidas da sua audência em tempo real</p>
       </aside>
@@ -45,16 +48,14 @@ export function NewRoom() {
         <div className="main-content">
           <img src={logoImg} alt="Logo do Letmeask" />
           <h2>Criar uma nova sala</h2>
-          <form onSubmit={handleCreateRoom} >
-            <input 
+          <form onSubmit={handleCreateRoom}>
+            <input
               type="text"
               placeholder="Nome da sala"
-              onChange={event => setNewRoom(event.target.value)}
+              onChange={(event) => setNewRoom(event.target.value)}
               value={newRoom}
             />
-            <Button type="submit">
-              Criar sala
-            </Button>
+            <Button type="submit">Criar sala</Button>
           </form>
           <p>
             Quer entrar em uma sala existente? <Link to="/">clique aqui</Link>
