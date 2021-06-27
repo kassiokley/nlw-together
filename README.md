@@ -1,6 +1,6 @@
-<h1?>Letmeask</h1>
+<h1 align="center">Letmeask</h1>
 
-<p align="center">Projeto criado na Next Level Week 6</p>
+<h2 align="center">Projeto criado na Next Level Week 6</h2>
 
 <br>
 
